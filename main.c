@@ -6,35 +6,23 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
-#include "Parser.h"
-#include "Game.h"
-#include "Solver.h"
-#include "MainAux.h"
-#include "SPBufferset.h"
 #include <time.h>
+#include "Game.h"
 
-int main(/*int argc, char** argv*/){
+int main(int argc, char** argv){
+	board* b;               /*declare on a board, this board will stay as long as the player play the game*/
 
-	/*board* b;*/
-
-	SP_BUFF_SET();
-
-	/*enterBoardSize();*/
-
-
-	/*
-	 * Initializing randomization
-	 */
-	/*
+	/*Initialising randomisation*/
 	if (argc > 1){
 		srand(atoi(argv[1]));
 	} else {
 		srand(time(NULL));
 	}
-	*/
 
-	initBoard();
+	b = initBoard();      /*Initialised the structer of the board*/
 
+	/*start a game*/
+	letsPlay(b);
 	return 0;
 }
 
